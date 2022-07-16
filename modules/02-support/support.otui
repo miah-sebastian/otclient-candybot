@@ -8,19 +8,18 @@ Panel
 
   BotOptionCheckBox
     id: AutoHeal
-    !text: tr('Auto Heal')
     !tooltip: tr('Heal your character automatically.')
     anchors.left: parent.left
     anchors.top: parent.top
-    width: 80
+    width: 15
 
   Label
     id: HealthSpellLabel
     width: 120
     !text: tr('Spell text:')
-    anchors.left: prev.left
-    anchors.top: prev.bottom
-    margin-top: 5
+    anchors.left: prev.right
+    anchors.top: parent.top
+    margin-left: 2
 
   BotOptionLineEdit
     id: HealSpellText
@@ -47,6 +46,94 @@ Panel
     show-value: true
     symbol: %
     minimum: 1
+    maximum: 40
+
+  BotOptionCheckBox
+    id: AutoHeal2
+    !tooltip: tr('Heal your character automatically.')
+    anchors.left: HealSpellText.left
+    anchors.top: prev.bottom
+    margin-top: 5
+    width: 15
+
+  Label
+    id: HealthSpellLabel2
+    width: 120
+    !text: tr('Spell text:')
+    anchors.left: prev.right
+    anchors.top: HealthBar.bottom
+    margin-left: 2
+    margin-top: 5
+
+  BotOptionLineEdit
+    id: HealSpellText2
+    width: 100
+    anchors.left: parent.left
+    anchors.right: prev.right
+    anchors.top: prev.bottom
+    margin-top: 2
+
+  Label
+    id: HealthLabel2
+    !text: tr('On health lower than:')
+    anchors.right: parent.right
+    anchors.top: HealthSpellLabel2.top
+    margin-left: 18
+
+  BotOptionHorizontalScrollBar
+    id: HealthBar2
+    width: 150
+    anchors.right: parent.right
+    anchors.top: HealthLabel2.bottom
+    margin-top: 8
+    mouse-scroll: false
+    show-value: true
+    symbol: %
+    minimum: 41
+    maximum: 70
+
+  BotOptionCheckBox
+    id: AutoHeal3
+    !tooltip: tr('Heal your character automatically.')
+    anchors.left: HealSpellText2.left
+    anchors.top: prev.bottom
+    margin-top: 5
+    width: 15
+
+  Label
+    id: HealthSpellLabel3
+    width: 120
+    !text: tr('Spell text:')
+    anchors.left: prev.right
+    anchors.top: HealthBar2.bottom
+    margin-left: 2
+    margin-top: 5
+
+  BotOptionLineEdit
+    id: HealSpellText3
+    width: 100
+    anchors.left: parent.left
+    anchors.right: HealthSpellLabel3.right
+    anchors.top: HealthSpellLabel3.bottom
+    margin-top: 2
+
+  Label
+    id: HealthLabel3
+    !text: tr('On health lower than:')
+    anchors.right: parent.right
+    anchors.top: HealthSpellLabel3.top
+    margin-left: 18
+
+  BotOptionHorizontalScrollBar
+    id: HealthBar3
+    width: 150
+    anchors.right: parent.right
+    anchors.top: HealthLabel3.bottom
+    margin-top: 8
+    mouse-scroll: false
+    show-value: true
+    symbol: %
+    minimum: 71
     maximum: 100
 
   HorizontalSeparator

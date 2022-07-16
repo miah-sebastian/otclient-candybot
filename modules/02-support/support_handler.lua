@@ -13,8 +13,16 @@ SupportModule.dependencies = {
 
 SupportModule.options = {
   ['AutoHeal'] = false,
-  ['HealSpellText'] = 'exura',
-  ['HealthBar'] = 75,
+  ['HealSpellText'] = 'exura vita',
+  ['HealthBar'] = 35,
+  
+  ['AutoHeal2'] = false,
+  ['HealSpellText2'] = 'exura gran',
+  ['HealthBar2'] = 55,
+
+  ['AutoHeal3'] = false,
+  ['HealSpellText3'] = 'exura',
+  ['HealthBar3'] = 75,
 
   ['AutoHealthItem'] = false,
   ['ItemHealthBar'] = 75,
@@ -66,6 +74,16 @@ table.merge(SupportModule, {
 SupportModule.listeners = {
   [SupportModule.autoHealListener] = {
     option = "AutoHeal", 
+    connect = SupportModule.AutoHeal.ConnectCastListener, 
+    disconnect = SupportModule.AutoHeal.DisconnectCastListener
+  },
+  [SupportModule.autoHealListener] = {
+    option = "AutoHeal2", 
+    connect = SupportModule.AutoHeal.ConnectCastListener, 
+    disconnect = SupportModule.AutoHeal.DisconnectCastListener
+  },
+  [SupportModule.autoHealListener] = {
+    option = "AutoHeal3", 
     connect = SupportModule.AutoHeal.ConnectCastListener, 
     disconnect = SupportModule.AutoHeal.DisconnectCastListener
   },
